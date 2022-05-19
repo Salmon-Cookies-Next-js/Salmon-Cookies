@@ -1,0 +1,6 @@
+{
+  "id": "lima",
+  "minCustomers": 2,
+  "maxCustomers": 16,
+  "averageHourlySales": 4.6
+}

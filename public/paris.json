@@ -1,0 +1,6 @@
+{
+  "id": "paris",
+  "minCustomers": 2,
+  "maxCustomers": 38,
+  "averageHourlySales": 2.3
+}
