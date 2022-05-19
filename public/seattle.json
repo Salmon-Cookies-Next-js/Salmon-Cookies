@@ -1,0 +1,6 @@
+{
+  "id": "seattle",
+  "minCustomers": 23,
+  "maxCustomers": 65,
+  "averageHourlySales": 6.3
+}
