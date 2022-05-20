@@ -34,8 +34,15 @@ export default function Sales(){
       )
     }
     )
-    
-    const storeData = cookieStore.map((data) =>{
+
+      const getRandomCustomers = () =>{
+
+    return(
+      Math.floor(Math.random() * parseInt(stores.maxCustomer - stores.minCustomer + 1) + stores.minCustomer)
+      )
+  }
+  console.log(getRandomCustomers())
+    const storeData = stores.map((data) =>{
       console.log(data)
       
       return(
@@ -49,12 +56,7 @@ export default function Sales(){
         </>
       )
     })
-  const getRandomCustomers = () =>{
 
-    return(
-      Math.floor(Math.random() * (setCookieStore(stores.maxCustomer) - setCookieStore(stores.minCustomer) + 1) + setCookieStore(stores.minCustomer))
-      )
-  }
 
   
 
