@@ -11,6 +11,7 @@ import { useTable } from 'react-table'
 export default function Sales(){
   console.log("STORES:",stores)
   const [cookieStore, setCookieStore] = React.useState(stores);
+  console.log("COOKIE",cookieStore)
   // const [storeArray, setStoreArray] = React.useState([]);
   const [eachHour, setEachHour] = React.useState();
   const [dailyTotalState, setDailyTotalState] = React.useState();
@@ -33,7 +34,21 @@ export default function Sales(){
       )
     }
     )
-
+    
+    const storeData = cookieStore.map((data) =>{
+      console.log(data)
+      
+      return(
+        <>
+        <tr>
+          <td>{data.name}</td>
+          <td>{data.minCustomer}</td>
+          <td>{data.maxCustomer}</td>
+          <td>{data.avgCookieSale}</td>
+        </tr>
+        </>
+      )
+    })
   const getRandomCustomers = () =>{
 
     return(
@@ -42,18 +57,6 @@ export default function Sales(){
   }
 
   
-  const storeData = cookieStore.map((data) =>{
-    return(
-      <>
-      <tr>
-        <td>{data.name}</td>
-        <td>{data.minCustomer}</td>
-        <td>{data.maxCustomer}</td>
-        <td>{data.avgCookieSale}</td>
-      </tr>
-      </>
-    )
-  })
 
 
   return (
@@ -75,7 +78,8 @@ export default function Sales(){
             </label>
         </fieldset>
         {/* put add function here to update the chart */}
-        <button type="submit">Add a Store</button>
+        
+        <button onClick={()=> getRandomCustomers()} type="submit">Add a Store</button>
       </form>
     </div><div id="cookieStores">
     <table>
@@ -83,6 +87,8 @@ export default function Sales(){
         <tr>{time}</tr>
       </thead>
      <tbody>
+       
+     
         {storeData}
      </tbody>
    </table>
