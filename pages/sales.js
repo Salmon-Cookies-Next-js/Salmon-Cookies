@@ -1,4 +1,6 @@
 import * as React from 'react'
+import stores from '../public/stores.json'
+import { useTable } from 'react-table'
 //create a function that takes in state, once that state being passed in via user input
 //is updated by the function it will be added to an object
 //that object will be accessed by a mapped element on the page
@@ -7,13 +9,14 @@ import * as React from 'react'
 //passing in data structure that contains store data into storeArray
 
 export default function Sales(){
-  const [cookieStore, setCookieStore] = React.useState();
+  console.log("STORES:",stores)
+  const [cookieStore, setCookieStore] = React.useState(stores);
   // const [storeArray, setStoreArray] = React.useState([]);
   const [eachHour, setEachHour] = React.useState();
   const [dailyTotalState, setDailyTotalState] = React.useState();
   let hours = ['6 a.m', '7 a.m', '8 a.m', '9 a.m.','10 a.m','11 a.m','12 p.m','1 p.m','2 p.m','3 p.m','4 p.m','5 p.m','6 p.m','7 p.m','Daily Location Total'];
  
-
+  
 
   
     //based on the storeName that is taken in add this min and max onto it
@@ -21,7 +24,36 @@ export default function Sales(){
   function addToStoreArray(){
 
   }
+  const time = hours.map((data) =>{
+      return(
+        <>          
+          <th></th>
+          <th>{data}</th>
+        </>
+      )
+    }
+    )
 
+  const getRandomCustomers = () =>{
+
+    return(
+      Math.floor(Math.random() * (setCookieStore(stores.maxCustomer) - setCookieStore(stores.minCustomer) + 1) + setCookieStore(stores.minCustomer))
+      )
+  }
+
+  
+  const storeData = cookieStore.map((data) =>{
+    return(
+      <>
+      <tr>
+        <td>{data.name}</td>
+        <td>{data.minCustomer}</td>
+        <td>{data.maxCustomer}</td>
+        <td>{data.avgCookieSale}</td>
+      </tr>
+      </>
+    )
+  })
 
 
   return (
@@ -46,26 +78,14 @@ export default function Sales(){
         <button type="submit">Add a Store</button>
       </form>
     </div><div id="cookieStores">
-        <table>
-          <thead>
-
-          </thead>
-          <tbody>
-            <tr>
-              {/* place cookie sales per hour here */}
-              <td>
-                {/* tabledata each hour */}
-              </td>
-            </tr>
-            <tr>
-              {/* table daily total */}
-            </tr>  
-            
-          </tbody>
-          <tfoot>
-
-          </tfoot>
-        </table>
+    <table>
+      <thead>
+        <tr>{time}</tr>
+      </thead>
+     <tbody>
+        {storeData}
+     </tbody>
+   </table>
       </div></>
 )
 }
