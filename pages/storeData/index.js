@@ -1,21 +1,25 @@
 import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
+import * as React from 'react'
 
 export default function StoreData(props) {
-  return(
-    <div className={styles.container}>
-    <h1 className={styles.title}>Store Cookie Sale Information</h1>
-    <ul>
-          <li>
-            <Link href="/stores/seattle"><a>Seattle</a></Link>
-          </li>
-          <li>
-            <Link href="/stores/lima"><a>Lima</a></Link>
-          </li>
-          <li>
-            <Link href="/stores/paris"><a>Paris</a></Link>
-          </li>
-        </ul>
-    </div>
-  ) 
+  React.useEffect(() =>{
+        let ul = document.getElementsByTagName('ul')[0];
+        let li = ul.getElementsByTagName('li');
+        console.log(li);
+})
+return (
+  <ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+  </ul>
+)
 }
+
+// React.useEffect(() =>{
+//   let cookieTableRemove = document.getElementsByTagName('tfoot')[0];
+//   let cookieTableRow = document.getElementById('newTotal');
+//   console.log(cookieTableRemove);
+//   cookieTableRemove.removeChild(cookieTableRow);
+//   })

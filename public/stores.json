@@ -1,26 +1,27 @@
-[{
-  "name": "Seattle",
+ {"results": [
+  {
+  "storeName": "Seattle",
   "minCustomer": 23,
   "maxCustomer": 65,
   "avgCookieSale": 6.3
 }, 
-{"name": "Tokyo",
+{"storeName": "Tokyo",
   "minCustomer": 3,
   "maxCustomer": 24,
   "avgCookieSale": 1.2
 }, 
-{ "name": "Dubai",
+{ "storeName": "Dubai",
   "minCustomer": 11,
   "maxCustomer": 38,
   "avgCookieSale": 3.7
 },
-{"name": "Paris",
+{"storeName": "Paris",
   "minCustomer": 20,
   "maxCustomer": 38,
   "avgCookieSale": 2.3
 },
-{"name": "Lima",
+{"storeName": "Lima",
   "minCustomer": 2,
   "maxCustomer": 16,
   "avgCookieSale": 4.6
-}]
+}]}
