@@ -40,7 +40,7 @@ function renderStoreData(store){
   
   let renderedArray = [];
   renderedArray.push(store.storeName);
-  for(let i = 0; i < hours.length -2; i++){
+  for(let i = 0; i < hours.length -1; i++){
     let totalCookiesThisHour = getCookieSalesPerHour(store)
     store.dailyTotal += totalCookiesThisHour;
     renderedArray.push(totalCookiesThisHour)
