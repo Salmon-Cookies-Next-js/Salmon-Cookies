@@ -1,1 +1,26 @@
-["seattle", "lima", "paris"]
+[{
+  "name": "Seattle",
+  "minCustomer": 23,
+  "maxCustomer": 65,
+  "avgCookieSale": 6.3
+}, 
+{"name": "Tokyo",
+  "minCustomer": 3,
+  "maxCustomer": 24,
+  "avgCookieSale": 1.2
+}, 
+{ "name": "Dubai",
+  "minCustomer": 11,
+  "maxCustomer": 38,
+  "avgCookieSale": 3.7
+},
+{"name": "Paris",
+  "minCustomer": 20,
+  "maxCustomer": 38,
+  "avgCookieSale": 2.3
+},
+{"name": "Lima",
+  "minCustomer": 2,
+  "maxCustomer": 16,
+  "avgCookieSale": 4.6
+}]
