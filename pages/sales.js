@@ -25,14 +25,15 @@ function CreateStore(storeName, minCustomer, maxCustomer, avgCookieSale) {
 
 
 
-function randomHourlyCustomers(store){
-  let customersPerHour = (Math.floor(Math.random() * (store.maxCustomer - store.minCustomer + 1) + store.minCustomer))
-  return customersPerHour;
+function getRandomCustomers(store){
+  return  (Math.floor(Math.random() * (store.maxCustomer - store.minCustomer + 1) + store.minCustomer))
 }
 
-function randomCookiesPerHour(store){
-  let hourlyCookieTotal = Math.ceil(randomHourlyCustomers(store) * (store.avgCookieSale))
-  return hourlyCookieTotal;
+function getCookieSalesPerHour(store){
+    for (let i = 0; i < hours.length; i++) {
+      let customersThisHour = store.getRandomCustomers();  
+      let totalCookiesSoldThisHour = Math.ceil(customersThisHour * store.avg);
+      this.cookiesSoldEachHourArray.push(totalCookiesSoldThisHour);
 }
 
 function renderStoreData(store){
@@ -40,7 +41,7 @@ function renderStoreData(store){
   let renderedArray = [];
   renderedArray.push(store.storeName);
   for(let i = 0; i < hours.length -2; i++){
-    let totalCookiesThisHour = randomCookiesPerHour(store)
+    let totalCookiesThisHour = getCookieSalesPerHour(store)
     store.dailyTotal += totalCookiesThisHour;
     renderedArray.push(totalCookiesThisHour)
   }
